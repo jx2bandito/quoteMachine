@@ -1,0 +1,244 @@
+body {
+  font-family: "domine";
+  background-color: lightgreen;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+#quoteBox {
+  position: absolute;
+  margin: 0;
+  width: 60vw;
+  height: auto;
+  min-height: 40vw;
+  margin-top: 5vw;
+  left: calc(50% - 30vw);
+  text-align: center;
+  overflow: auto;
+  padding: 5vw;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  font-size: 3vw;
+  border: 2vw solid darkslategray;
+  border-radius: 3%;
+  border-style: inset;
+  z-index: 50;
+  background-color: white;
+  color: rgb(50, 50, 50);
+  box-shadow: 0 0 .1vw .1vw black;
+}
+
+#tweetContainer {
+  position: absolute;
+  width: auto;
+  bottom: 1vw;
+  z-index: 1;
+  display: none;
+  animation: popIn .5s ease-out;
+}
+
+#tweetButton {
+  width: 100%;
+  height: auto;
+  font-size: 1.5vw;
+  position: relative;
+  text-decoration: none!important;
+  border-radius: 10%;
+  box-shadow: 0 .1vw .2vw .01vw black;
+  border: none!important;
+  outline: none!important;
+  background-color: rgb(27, 149, 224);
+  color: white;
+  font-family: helvetica;
+  padding: 1vw;
+  z-index: 2;
+}
+
+#tweetButton:active{
+  box-shadow: none;
+  background-color: rgb(12, 122, 191);
+}
+
+#tweetContainer:active{
+  transform: translateY(0.1vw);
+}
+
+#quoteBox::-webkit-scrollbar {
+  z-index: 1;
+  background-color: transparent;
+}
+
+#quoteBox #startingMessage {
+  display: block;
+}
+
+#startingMessage2 {
+  color: orangered;
+  line-height: 9.5vw;
+  position: absolute;
+  right: 5%;
+  font-size: 2.5vw;
+}
+
+#authorSpace {
+  display: block;
+  color: rgb(70, 70, 200);
+  text-align: right;
+  animation: popIn .5s ease-out;
+}
+
+@keyframes popIn {
+  0% {
+    -webkit-transform: scale(.98);
+    -moz-transform: scale(.98);
+    -ms-transform: scale(.98);
+    transform: scale(.98);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+#quoteSpace {
+  text-align: left;
+}
+
+.partial{
+  display: none;
+}
+
+.handle1 {
+  position: absolute;
+  right: 2vw;
+  top: calc(50% - 1vw);
+  width: 15vw;
+  height: 2vw;
+  background-color: gray;
+  border-bottom-left-radius: 20%;
+  border-top-left-radius: 20%;
+  border: .1vw solid black;
+}
+
+.handle2 {
+  position: absolute;
+  top: 3vw;
+  right: 15vw;
+  width: 2vw;
+  height: 7vw;
+  background-color: gray;
+  border: .1vw solid black;
+  border-bottom: none;
+}
+
+.handle3 {
+  position: absolute;
+  right: 13.5vw;
+  width: 5vw;
+  height: 5vw;
+  border-radius: 50%;
+  background-color: red;
+  border: .1em solid red;
+}
+
+.handle:hover {
+  cursor: pointer!important;
+}
+
+#handle3 {}
+
+#handleContainer {
+  position: absolute;
+  width: 30vw;
+  transform-style: preserve-3d;
+  margin-top: 15vw;
+  right: 0;
+  height: 20vw;
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  transition: transform .5s cubic-bezier(1, .01, .05, 1.93);
+}
+
+.rotateDown {
+  -webkit-transform: rotateX(180deg) rotateY(180deg)!important;
+  -moz-transform: rotateX(180deg) rotateY(180deg)!important;
+  -ms-transform: rotateX(180deg) rotateY(180deg)!important;
+  transform: rotateX(180deg) rotateY(180deg)!important;
+}
+
+body {
+  text-align: center;
+  perspective: 100vmax;
+}
+
+@media screen and (max-width: 700px) {
+  #quoteBox {
+    height: 50vh;
+    font-size: 3vmax;
+  }
+}
+
+#lightsContainer {
+  position: absolute;
+  background-color: transparent;
+  width: 5vw;
+  height: 1vw;
+  right: 25vw;
+  top: 5vw;
+  z-index: 5000;
+}
+
+.light {
+  position: absolute;
+  height: 1.6vw;
+  width: 1.6vw;
+  border: .2vw solid black;
+  background-color: green;
+  border-radius: 50%;
+  opacity: .5;
+}
+
+#light1 {
+  left: 2vw;
+  animation-delay: .2s
+}
+
+#light2 {
+  left: 4vw;
+  animation-delay: .3s;
+}
+
+#light3 {
+  left: 6vw;
+  animation-delay: .4s;
+}
+
+.animateLights {
+  animation: lightUp .5s ease-out infinite;
+}
+
+@keyframes lightUp {
+  0% {
+    opacity: .7;
+  }
+  50% {
+    opacity: 1;
+  }
+  60% {
+    opacity: .7;
+  }
+  100% {
+    opacity: .7;
+  }
+}
