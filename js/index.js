@@ -28,14 +28,14 @@ $(document).ready(function() {
   function determineTweetPos() {
     $tweetContainer.css("left", "calc(50% - " + $tweetContainer.width() / 2 + "px)");
   };
+  
   determineTweetPos();
   $(window).on("resize", determineTweetPos);
 
   if (!onMobile) { ////////////Make the red handle ball 3D
-    for (var a = 1; a < 180; a++) {
+  for (var a = 1; a < 180; a++) {
       $handleContainer.append("<div class='handle3 handle'></div>");
       $handleContainer.children(".handle3:nth-child(" + a + ")").css("transform", "rotateY(" + a + "deg)");
-
     };
   };
 
@@ -45,11 +45,12 @@ $(document).ready(function() {
     $startingMessage.hide();
     $startingMessage2.hide();
   });
+  
   $handleContainer.on("click", function() {
-
     if (handleDown) {
       return false;
     }
+	
     $quoteSpace.html("");
     $light.addClass("animateLights");
     $quoteMessage.show();
@@ -57,9 +58,10 @@ $(document).ready(function() {
     $tweetContainer.hide();
     $handleContainer.addClass("rotateDown");
     handleDown = true;
-    var index = 0;
 
+    var index = 0;
     var empty = (quoteList.length === 0);
+
     if (empty) {
       for (var a in secondQuoteList) {
         quoteList.push(secondQuoteList[a]);
@@ -73,9 +75,7 @@ $(document).ready(function() {
     answer[0] = answer[0].split(" ");
 
     var setQuote = setInterval(function() {
-
       index++;
-
       var partialAnswer = answer[0][index-1];
       $quoteSpace.append("<span class='partial'>" + partialAnswer + "</span> ");
       $quoteSpace.children(".partial").show("scale", 1500/answer[0].length * 1.2);
@@ -96,7 +96,6 @@ $(document).ready(function() {
         clearInterval(setQuote);
         return false;
       }
-
     }, 1500 / answer[0].length);
     forLink = urlReady(answer[0].join(" ") + "<br> -" + answer[1]);
     toLink = "https://twitter.com/intent/tweet?text=" + forLink;
