@@ -9,6 +9,4 @@ interesting experiment.
 <br />
 <br />Project page: https://jx2bandito.github.io/quoteMachine/
 <br />
-<br />Originally made in Codepen: https://codepen.io/jx2bandito/pen/evjGVX
-<br />
 <br />FreeCodeCamp prompt: https://www.freecodecamp.org/challenges/build-a-random-quote-machine
